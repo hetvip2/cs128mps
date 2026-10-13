@@ -1,0 +1,84 @@
+// clang-format off
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+//  Written By : Jule Schatz                    Environment : ubuntu:bionic               //
+//  Date ......: 2023/12/29                      Compiler ...: clang-10                    //
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+// clang-format on
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                             Framework Set-up //
+/////////////////////////////////////////////////////////////////////////////////////////////
+#ifndef CATCH_CONFIG_MAIN
+#  define CATCH_CONFIG_MAIN
+#endif
+#include <catch/catch.hpp>
+#include <vector>
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                                 Includes //
+/////////////////////////////////////////////////////////////////////////////////////////////
+#include <stdexcept>
+
+#include "Sport.hpp"
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                             Helpers/Constants //
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                                Test Cases //
+/////////////////////////////////////////////////////////////////////////////////////////////
+TEST_CASE("Push Back", "[PushBack]") {
+  Sport* sports = new Sport[1];
+  unsigned int size = 0;
+  unsigned int capacity = 1;
+
+  // Add some sport objects using the function
+  Sport football = {"Football", 10};
+  Sport volleyball = {"Volleyball", 5};
+
+  PushBackToSportArray(sports, size, capacity, football);
+  PushBackToSportArray(sports, size, capacity, volleyball);
+
+  REQUIRE(size == 2);
+  REQUIRE(capacity == 2);
+  REQUIRE(sports[0].name == "Football");
+  REQUIRE(sports[1].name == "Volleyball");
+
+  delete[] sports;
+}
+
+TEST_CASE("Add to Player Count", "[PlayerCount]") {
+  Sport sports[3];
+  unsigned int size = 3;
+
+  sports[0] = {"Football", 10};
+  sports[1] = {"Volleyball", 5};
+  sports[2] = {"Tennis", 1};
+
+  int change[2] = {0, 2};
+
+  Sport* new_arr = AddToPlayerCount(sports, size, change, 2);
+
+  REQUIRE(new_arr[0].number_players == 11);
+  REQUIRE(new_arr[1].number_players == 5);
+  REQUIRE(new_arr[2].number_players == 2);
+}
+
+TEST_CASE("Make a Sport Object", "[MakeSport]") {
+  Sport* sports = new Sport[1];
+  unsigned int size = 1;
+  unsigned int capacity = 1;
+
+  Sport* s1 = MakeSport("Volleyball", 6);
+
+  sports[0] = *s1;
+
+  REQUIRE(sports[0].name == "Volleyball");
+
+  delete s1;
+  delete[] sports;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
