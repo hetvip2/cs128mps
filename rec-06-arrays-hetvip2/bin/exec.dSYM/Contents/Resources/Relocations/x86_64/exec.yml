@@ -1,0 +1,15 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     'bin/exec'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003E60, symSize: 0xF }
+  - { offsetInCU: 0x2D1B, offset: 0x2D1B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003E60, symSize: 0xF }
+  - { offsetInCU: 0x26, offset: 0x2D5A, size: 0x8, addend: 0x0, symName: __Z10MaxElementPij, symObjAddr: 0x0, symBinAddr: 0x100003E70, symSize: 0x60 }
+  - { offsetInCU: 0x2908, offset: 0x563C, size: 0x8, addend: 0x0, symName: __Z10MaxElementPij, symObjAddr: 0x0, symBinAddr: 0x100003E70, symSize: 0x60 }
+  - { offsetInCU: 0x296C, offset: 0x56A0, size: 0x8, addend: 0x0, symName: __Z9SumFinderPiji, symObjAddr: 0x60, symBinAddr: 0x100003ED0, symSize: 0x70 }
+  - { offsetInCU: 0x29D0, offset: 0x5704, size: 0x8, addend: 0x0, symName: __Z12ReverseArrayPij, symObjAddr: 0xD0, symBinAddr: 0x100003F40, symSize: 0x10 }
+  - { offsetInCU: 0x2A06, offset: 0x573A, size: 0x8, addend: 0x0, symName: __Z11MergeArraysPijS_jS_, symObjAddr: 0xE0, symBinAddr: 0x100003F50, symSize: 0x20 }
+  - { offsetInCU: 0x2A66, offset: 0x579A, size: 0x8, addend: 0x0, symName: __Z16RemoveDuplicatesPiRi, symObjAddr: 0x100, symBinAddr: 0x100003F70, symSize: 0x10 }
+  - { offsetInCU: 0x2A9C, offset: 0x57D0, size: 0x8, addend: 0x0, symName: __Z11RotateArrayPijj, symObjAddr: 0x110, symBinAddr: 0x100003F80, symSize: 0x10 }
+  - { offsetInCU: 0x2AE0, offset: 0x5814, size: 0x8, addend: 0x0, symName: __Z18RotateArrayInPlacePijj, symObjAddr: 0x120, symBinAddr: 0x100003F90, symSize: 0x10 }
+...
